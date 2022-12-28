@@ -1,0 +1,52 @@
+/* Designing the navigation */
+
+li{
+  padding-left: 1.2em;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+li span{
+  color: rgba(
+      255,255,255,.5
+    );
+    padding-right: .5rem;
+}
+
+/* This is for the active navlink style . It comes automatically with NavLink component for react-router */
+.active{
+  border-bottom: 4px solid white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+li .navlink{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+li .navlink::after{
+  content: '';
+  position:absolute;
+  top:0;
+  left: 0;
+  width:0;
+  height: 100%;
+  transition: width 200ms ease-in-out;
+}
+li .navlink:hover::after{
+  width: 100%;
+  border-bottom: 4px solid hsl( var(--clr-white) / .5);
+}
+menu{
+  background: hsl( var(--clr-white) / .1);
+  backdrop-filter: blur(1rem);
+}
+@media (max-width: 375px){
+menu{
+  background: none;
+}
+}
